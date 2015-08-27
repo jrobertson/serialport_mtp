@@ -4,6 +4,7 @@
 
     sp = SerialPortMTP.new
 
+    sp.start
     sp.println("Hello world!")
     sp.feed
 
