@@ -3,15 +3,12 @@
 # file: serialport_mtp.rb
 
 # original code at https://github.com/lazyatom/a2_printer
-# modified code uses references from https://github.com/adafruit/Adafruit-Thermal-Printer-Library
 
 # This gem can be used with the mini thermal printer, connected via 
 #                                          the TX+RX pins on the Raspberry Pi
 
 require 'serialport'
 
-
-ASCII_GS = 29  # Group separator
 
 class SerialPortMTP
   
@@ -134,11 +131,11 @@ class SerialPortMTP
   end
 
   def inverse_on
-    write_bytes ASCII_GS, 'B', 1
+    set_print_mode(INVERSE_MASK)
   end
 
   def inverse_off
-    write_bytes ASCII_GS, 'B', 0
+    unset_print_mode(INVERSE_MASK)
   end
 
   def upside_down_on
