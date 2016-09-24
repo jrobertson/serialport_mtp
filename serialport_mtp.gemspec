@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = 'serialport_mtp'
-  s.version = '0.1.1'
+  s.version = '0.1.2'
   s.summary = 'This gem can be used with the mini thermal printer, connected via the TX+RX pins on the Raspberry Pi'
   s.authors = ['James Robertson']
   s.files = Dir['lib/serialport_mtp.rb']

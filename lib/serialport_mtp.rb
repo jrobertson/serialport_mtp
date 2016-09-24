@@ -87,7 +87,17 @@ class SerialPortMTP
   end
 
   def print(string)
-    string.bytes { |b| write(b) }
+    
+    string.chars.each do |c|
+      
+      # is it a pound sign (£) ?
+      if c.ord == 163 then
+        156.chr.bytes { |b| write(b) }
+      else
+        c.bytes { |b| write(b) }
+      end
+
+    end
   end
 
   def println(string)
